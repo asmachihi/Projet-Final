@@ -111,9 +111,18 @@ serveur.use('/api/client',clientRouter)
 serveur.use('/api/panier',panierRouter)
 
 
+
 // création du serveur 
 
 serveur.listen(5000,()=>console.log('serveur connecté au port 5000'))
 
 
 serveur.listen(8080, () => console.log('AdminBro is under localhost:8080/admin'))
+
+
+
+if (process.env.NODE_ENV === 'AdminBro') {
+  serveur.use(express.static('chc/build'));
+  serveur.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'chc', 'build', 'index.html'));
+  });}

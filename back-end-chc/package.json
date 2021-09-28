@@ -34,5 +34,14 @@
     "token": "^0.1.0",
     "tslib": "^2.3.1",
     "web": "0.0.2"
-  }
+  },
+    "start": "node serveur.js",
+    "server": "nodemon serveur.js",
+    "client": "cd chc && npm run start",
+    "server-install": "npm install",
+    "client-install": "cd chc && npm install",
+    "install-all": "concurrently \"npm run serveur-install\" \"npm run chc-install\"",
+    "dev": "concurrently \"npm run serveur\" \"npm run chc\"",
+    "heroku-postbuild": "cd chc && npm install && npm run build"
+  
 }
