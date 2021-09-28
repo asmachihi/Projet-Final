@@ -4,7 +4,7 @@
   "description": "",
   "main": "serveur.js",
   "scripts": {
-    "dev": "concurrently \" nodemon serveur.js\" \"cd.. && cd chc && npm start\""
+    "dev": "concurrently \" nodemon serveur.js\" \"cd chc && npm start\""
   },
   "keywords": [],
   "author": "",
@@ -41,7 +41,7 @@
     "server-install": "npm install",
     "client-install": "cd chc && npm install",
     "install-all": "concurrently \"npm run serveur-install\" \"npm run chc-install\"",
-    "dev": "concurrently \"npm run serveur\" \"npm run chc\"",
-    "heroku-postbuild": "cd chc && npm install && npm run build"
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "cd client && npm install && npm run build"
   
 }
