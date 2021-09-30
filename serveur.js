@@ -26,7 +26,7 @@ const path = require('path')
 
 
 //appel à la connexion de la base de donnée
-connectDB()
+// connectDB()
 
  //utilisation du JSON pour qu'il soit lisible
 serveur.use(express.json())
