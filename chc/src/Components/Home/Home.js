@@ -129,7 +129,13 @@ export default function Home() {
                         Quitter
                       </Link>
                     </a>
-                  </span>
+
+                   <a href="#" className="">
+                     <Link to="/profil">
+                       Compte
+                     </Link>
+                   </a>
+                 </span>
                 ) : (
                   <div className="nav-list">
                     <span className="navbar-text">

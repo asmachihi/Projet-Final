@@ -4,7 +4,11 @@
   "description": "",
   "main": "serveur.js",
   "scripts": {
-    "dev": "concurrently \" nodemon serveur.js\" \"cd chc && npm start\""
+    "start":"node serveur",
+    "serveur":"nodemon serveur",
+    "chc":"npm start --prefix chc",
+    "dev": "concurrently \" nodemon serveur.js\" \"cd chc && npm start\"",
+    "heroku-postbuild":"NOM_CONFIG_PRODUCTION=false npm install --prefix chc && npm run build --prefix chc"
   },
   "keywords": [],
   "author": "",
@@ -34,14 +38,5 @@
     "token": "^0.1.0",
     "tslib": "^2.3.1",
     "web": "0.0.2"
-  },
-    "start": "node serveur.js",
-    "server": "nodemon serveur.js",
-    "client": "cd chc && npm run start",
-    "server-install": "npm install",
-    "client-install": "cd chc && npm install",
-    "install-all": "concurrently \"npm run serveur-install\" \"npm run chc-install\"",
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "heroku-postbuild": "cd client && npm install && npm run build"
-  
+  } 
 }

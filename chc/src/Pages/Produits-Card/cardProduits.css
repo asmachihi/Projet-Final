@@ -8,6 +8,10 @@ html {
   display: -ms-flexbox;
   display: flex;
 }
+.titleprod{
+  color: #094c76;
+  font-size: initial;
+}
 
 .align-center {
   -webkit-box-align: center;

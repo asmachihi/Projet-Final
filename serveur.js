@@ -21,6 +21,7 @@ const {Storage} = require('@google-cloud/storage');
 const uploadFeature = require('@admin-bro/upload')
 const Produits = require('./src/Produits')
 const Panier = require('./src/Panier')
+const path = require('path')
 
 
 
@@ -112,17 +113,24 @@ serveur.use('/api/panier',panierRouter)
 
 
 
-// création du serveur 
 
-serveur.listen(5000,()=>console.log('serveur connecté au port 5000'))
+//hebergement
+if( process.env.NODE_ENV  === 'production'){
+
+  serveur.use(express.static('chc/build'))
+
+  serveur.get('*' ,(req,res)=>{
+    res.sendFile(path.resolve(__dirname , 'chc' , 'build' ,'index.html'))
+  })
+
+}
+
+// création du serveur 
+const PORT = process.env.PORT || 5000
+
+serveur.listen(PORT,()=>console.log('serveur connecté au port 5000'))
 
 
 serveur.listen(8080, () => console.log('AdminBro is under localhost:8080/admin'))
 
 
-
-if (process.env.NODE_ENV === 'AdminBro') {
-  serveur.use(express.static('chc/build'));
-  serveur.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'chc', 'build', 'index.html'));
-  });}

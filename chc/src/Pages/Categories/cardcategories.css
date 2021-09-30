@@ -38,6 +38,10 @@ body {
   display: table-cell;
   vertical-align: middle;
 }
+.titleprod{
+  color: #094c76;
+  font-size: initial;
+}
 
 .el-wrapper {
   width: 360px;

@@ -25,7 +25,7 @@ const CardProduits=({product,history}) =>{
             <Card style=  {{width: '28rem',color:'rgb(245 246 247)', height: '22rem;'}} >
             <Card.Img variant="top" src={image} className="img" />
               <Card.Body>
-                <Card.Title>{product.nom}</Card.Title>
+                <Card.Title className="titleprod">{product.nom}</Card.Title>
                 <Card.Text> {product.prix}<span>DT</span></Card.Text>
                 <Card.Text>{"🌟".repeat(product.rate)}</Card.Text>
                
